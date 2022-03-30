@@ -1,0 +1,63 @@
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+/* APP */
+
+.app {
+  display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  background-color: #262730;
+  width: 30%;
+  height: 100vh;
+}
+
+.header {
+  margin: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-note {
+  height: 3rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.note-list {
+  margin: 1rem;
+}
+
+.note-item {
+  padding: 1rem 1rem;
+  margin: 1rem 0rem;
+}
+
+.current-note {
+  background-color: #000;
+  border-radius: 5px;
+}
