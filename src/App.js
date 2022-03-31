@@ -4,14 +4,20 @@ import Sidebar from "./components/Sidebar";
 import "./style.css";
 
 function App() {
-  const [notes, setNotes] = useState([
-    {
-      title: `Note 1`,
-      id: `1`,
-      body: "",
-      isCurrent: true,
-    },
-  ]);
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notesData")) || [
+      {
+        title: `Note 1`,
+        id: `1`,
+        body: "",
+        isCurrent: true,
+      },
+    ]
+  );
+
+  useEffect(() => {
+    localStorage.setItem("notesData", JSON.stringify(notes));
+  }, [notes]);
 
   const resetSelection = function () {
     const newNotes = notes.map((note) => {

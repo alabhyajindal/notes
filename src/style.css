@@ -106,17 +106,5 @@ textarea {
   padding: 1rem 3rem;
   width: 65vw;
   outline: none;
+  height: 80vh;
 }
-
-/* .editor-b {
-  font-size: 1.7rem;
-  padding: 1rem 3rem;
-  width: 65vw;
-
-  top: 2rem;
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.editor-body-cont {
-  display: grid;
-} */
