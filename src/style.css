@@ -33,14 +33,14 @@ input:focus {
   outline: none;
 }
 
-/* textarea {
+textarea {
   background: none;
   outline: none;
   border: none;
   resize: none;
   color: inherit;
   font-family: inherit;
-} */
+}
 
 /* APP */
 
@@ -99,11 +99,24 @@ input:focus {
 }
 
 .editor-body {
-  background-color: #fff;
-  color: #000;
+  /* background-color: #fff;
+  color: #000; */
 
   font-size: 1.7rem;
   padding: 1rem 3rem;
   width: 65vw;
   outline: none;
 }
+
+/* .editor-b {
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  width: 65vw;
+
+  top: 2rem;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.editor-body-cont {
+  display: grid;
+} */
