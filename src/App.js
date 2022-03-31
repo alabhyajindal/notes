@@ -35,9 +35,14 @@ function App() {
   };
 
   const selectNote = function (e) {
-    resetSelection();
-
     const found = notes.find((note) => note.title === e.target.textContent);
+
+    const updatedNotes = notes.map((note) =>
+      note === found
+        ? { ...note, isCurrent: true }
+        : { ...note, isCurrent: false }
+    );
+    setNotes([...updatedNotes]);
   };
 
   const noteElems = notes.map((note, i) => (
