@@ -21,6 +21,18 @@ button {
   border: none;
 }
 
+input {
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
 /* APP */
 
 .app {
@@ -31,7 +43,7 @@ button {
 
 .sidebar {
   background-color: #262730;
-  width: 20%;
+  width: 30%;
   height: 100vh;
 }
 
@@ -53,12 +65,14 @@ button {
 }
 
 .note-item {
+  font-size: 1.5rem;
+  width: 90%;
   padding: 1rem 1rem;
   margin: 1rem 0rem;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .current-note {
-  background-color: #000;
-  border-radius: 5px;
+  background: #000;
 }

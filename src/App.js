@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
-import { nanoid } from "nanoid";
 
 function App() {
   const [notes, setNotes] = useState([
     {
       title: `Note 1`,
+      id: `1`,
       body: "",
       isCurrent: true,
     },
@@ -28,6 +28,7 @@ function App() {
       ...prevState,
       {
         title: `Note ${notes.length + 1}`,
+        id: `${notes.length + 1}`,
         body: "",
         isCurrent: true,
       },
@@ -35,24 +36,34 @@ function App() {
   };
 
   const selectNote = function (e) {
-    const found = notes.find((note) => note.title === e.target.textContent);
-
     const updatedNotes = notes.map((note) =>
-      note === found
+      note.title === e.target.value
         ? { ...note, isCurrent: true }
         : { ...note, isCurrent: false }
     );
     setNotes([...updatedNotes]);
   };
 
-  const noteElems = notes.map((note, i) => (
-    <h2
-      key={nanoid()}
+  const updateTitle = function (e) {
+    setNotes((prevState) =>
+      prevState.map((note) =>
+        note.isCurrent
+          ? { ...note, [e.target.name]: e.target.value }
+          : { ...note }
+      )
+    );
+  };
+
+  const noteElems = notes.map((note) => (
+    <input
+      key={note.id}
       onClick={selectNote}
+      onChange={updateTitle}
+      placeholder="Enter"
+      value={note.title}
       className={`note-item ${note.isCurrent ? "current-note" : ""}`}
-    >
-      {note.title}
-    </h2>
+      name="title"
+    />
   ));
 
   return (
