@@ -76,3 +76,22 @@ input:focus {
 .current-note {
   background: #000;
 }
+
+/* EDITOR */
+
+.editor-cont {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-title {
+  font-size: 3rem;
+  padding: 2rem 3rem;
+}
+
+.editor-body {
+  /* background-color: #fff;
+  color: #000; */
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+}

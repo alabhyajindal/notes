@@ -44,7 +44,7 @@ function App() {
     setNotes([...updatedNotes]);
   };
 
-  const updateTitle = function (e) {
+  const updateNote = function (e) {
     setNotes((prevState) =>
       prevState.map((note) =>
         note.isCurrent
@@ -58,18 +58,22 @@ function App() {
     <input
       key={note.id}
       onClick={selectNote}
-      onChange={updateTitle}
-      placeholder="Enter"
+      onChange={updateNote}
+      placeholder="Note's Title"
       value={note.title}
       className={`note-item ${note.isCurrent ? "current-note" : ""}`}
       name="title"
     />
   ));
 
+  const currentNote = function () {
+    return notes.find((note) => note.isCurrent);
+  };
+
   return (
     <div className="app">
       <Sidebar createNewNote={createNewNote} noteElems={noteElems} />
-      <Editor />
+      <Editor updateNote={updateNote} currentNote={currentNote} />
     </div>
   );
 }
