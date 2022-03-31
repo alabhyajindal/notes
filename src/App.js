@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
