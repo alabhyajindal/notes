@@ -31,7 +31,7 @@ button {
 
 .sidebar {
   background-color: #262730;
-  width: 30%;
+  width: 20%;
   height: 100vh;
 }
 
@@ -55,6 +55,7 @@ button {
 .note-item {
   padding: 1rem 1rem;
   margin: 1rem 0rem;
+  cursor: pointer;
 }
 
 .current-note {
