@@ -52,19 +52,23 @@ textarea {
 
 .sidebar {
   background-color: #262730;
-  width: 30%;
-  /* height: 100vh; */
+  width: 25%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 .heading {
-  font-size: 2.2rem;
+  font-size: 3rem;
 }
 
 .header {
   margin: 2rem 1.5rem;
   display: flex;
-  align-items: center;
+  /* width: 70%; */
   justify-content: space-between;
+  align-items: center;
 }
 
 .add-note {
@@ -81,7 +85,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 80%;
+  width: 95%;
   margin: 1rem 0rem;
   padding: 0.5rem 1rem;
   border-radius: 7px;
@@ -96,7 +100,7 @@ textarea {
 .delete-item {
   height: 2rem;
   cursor: pointer;
-  color: red;
+  color: #fff;
 }
 
 .current-note {
@@ -112,7 +116,7 @@ textarea {
 
 .editor-title {
   font-size: 3rem;
-  margin: 3rem 3rem;
+  margin: 1.5rem 3rem;
 }
 
 .editor-body {
