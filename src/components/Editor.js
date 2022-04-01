@@ -1,4 +1,5 @@
 import React from "react";
+import ContentEditable from "react-contenteditable";
 
 function Editor(props) {
   const body = document.querySelector(".editor-body");
@@ -16,9 +17,11 @@ function Editor(props) {
           />
           <div className="editor-body-cont">
             <textarea
-              className="editor-body"
-              onChange={props.updateNote}
+              html={props.currentNote().body}
+              onChange={props.updateBody}
+              onPaste={props.pastePlain}
               value={props.currentNote().body}
+              className="editor-body"
               name="body"
             ></textarea>
           </div>

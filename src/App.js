@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
-import { XIcon } from "@heroicons/react/solid";
+import { CurrencyEuroIcon, XIcon } from "@heroicons/react/solid";
 import { TrashIcon } from "@heroicons/react/solid";
 import { DocumentRemoveIcon } from "@heroicons/react/solid";
 
@@ -65,8 +65,21 @@ function App() {
     );
   };
 
+  const updateBody = (e) => {
+    setNotes((prevState) =>
+      prevState.map((note) =>
+        note.isCurrent
+          ? { ...note, [e.target.name]: e.target.value }
+          : { ...note }
+      )
+    );
+    const computed = window.getComputedStyle(e.target);
+    console.log(computed.height);
+    console.log(e.target.scrollHeight);
+    e.target.style.height = `${e.target.scrollHeight}px`;
+  };
+
   const deleteNote = function (e) {
-    console.log(e.target.closest("div").children);
     const selectedNote = e.target.closest("div").children[0].id;
     const updatedNotes = notes.filter((note) => note.id != selectedNote);
 
@@ -98,10 +111,22 @@ function App() {
     return notes.find((note) => note.isCurrent);
   };
 
+  const pastePlain = function (e) {
+    e.preventDefault();
+
+    const text = e.clipboardData.getData("text/plain");
+    document.execCommand("insertHTML", false, text);
+  };
+
   return (
     <div className="app">
       <Sidebar createNewNote={createNewNote} noteElems={noteElems} />
-      <Editor updateNote={updateNote} currentNote={currentNote} />
+      <Editor
+        updateNote={updateNote}
+        updateBody={updateBody}
+        currentNote={currentNote}
+        pastePlain={pastePlain}
+      />
     </div>
   );
 }
