@@ -44,8 +44,6 @@ textarea {
 /* APP */
 
 .app {
-  display: flex;
-  /* margin-top: 2rem; */
 }
 
 /* SIDEBAR */
@@ -57,6 +55,8 @@ textarea {
   top: 0;
   bottom: 0;
   overflow-y: auto;
+
+  /* opacity: 0; */
 }
 
 .heading {
@@ -110,8 +110,8 @@ textarea {
 /* EDITOR */
 
 .editor-cont {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  margin-left: 32rem;
 }
 
 .editor-title {
