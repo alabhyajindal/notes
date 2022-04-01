@@ -25,6 +25,8 @@ input {
   border: none;
   outline: none;
   color: inherit;
+
+  min-width: 0;
 }
 
 input:focus {
@@ -84,7 +86,7 @@ textarea {
 .note-item-cont {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   width: 95%;
   margin: 1rem 0rem;
   padding: 0.5rem 1rem;
