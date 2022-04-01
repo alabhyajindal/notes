@@ -62,6 +62,7 @@ function App() {
   };
 
   const deleteNote = function (e) {
+    resetSelection();
     const selectedNote = e.target.closest("div").children[0].id;
     const updatedNotes = notes.filter((note) => note.id != selectedNote);
     console.log(updatedNotes);
