@@ -5,7 +5,7 @@ function Sidebar(props) {
   return (
     <div className="sidebar">
       <header className="header">
-        <h1>Notes</h1>
+        <h1 className="heading">Notes</h1>
         <button onClick={props.createNewNote}>
           <PlusIcon className="add-note" />
         </button>

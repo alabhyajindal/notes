@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
+import ids from "./id";
 import { XIcon } from "@heroicons/react/solid";
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
         isCurrent: true,
       },
     ]);
+
+    // ids = ids.slice(0, ids.length - 1);
   };
 
   const selectNote = function (e) {
@@ -62,10 +65,9 @@ function App() {
   };
 
   const deleteNote = function (e) {
-    resetSelection();
+    console.log(e.target.closest("div").children);
     const selectedNote = e.target.closest("div").children[0].id;
     const updatedNotes = notes.filter((note) => note.id != selectedNote);
-    console.log(updatedNotes);
 
     setNotes([...updatedNotes]);
   };
@@ -82,7 +84,7 @@ function App() {
         onChange={updateNote}
         placeholder="Note's Title"
         value={note.title}
-        className={`note-item ${note.isCurrent ? "current-note" : ""}`}
+        className={`note-item`}
         name="title"
       />
       <button onClick={deleteNote}>
