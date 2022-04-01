@@ -1,6 +1,4 @@
-/* GENERAL */
-
-* {
+GENERAL * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -73,13 +71,25 @@ textarea {
   margin: 1rem;
 }
 
-.note-item {
-  font-size: 1.5rem;
-  width: 90%;
-  padding: 1rem 1rem;
+.note-item-cont {
+  display: flex;
+  align-items: center;
+  width: 70%;
   margin: 1rem 0rem;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+}
+
+.note-item {
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  border-radius: 5px;
+}
+
+.delete-item {
+  height: 2rem;
+  cursor: pointer;
+  color: #fff;
 }
 
 .current-note {

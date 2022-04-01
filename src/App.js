@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
+import { XIcon } from "@heroicons/react/solid";
 
 function App() {
   const [notes, setNotes] = useState(
@@ -60,16 +61,33 @@ function App() {
     );
   };
 
-  const noteElems = notes.map((note) => (
-    <input
-      key={note.id}
-      onClick={selectNote}
-      onChange={updateNote}
-      placeholder="Note's Title"
-      value={note.title}
-      className={`note-item ${note.isCurrent ? "current-note" : ""}`}
-      name="title"
-    />
+  const deleteNote = function (e) {
+    const selectedNote = e.target.closest("div").children[0].id;
+    const updatedNotes = notes.filter((note) => note.id != selectedNote);
+    console.log(updatedNotes);
+
+    setNotes([...updatedNotes]);
+  };
+
+  const noteElems = notes.map((note, i) => (
+    <div
+      className={`note-item-cont ${note.isCurrent ? "current-note" : ""}`}
+      key={i + 1}
+    >
+      <input
+        key={note.id}
+        id={note.id}
+        onClick={selectNote}
+        onChange={updateNote}
+        placeholder="Note's Title"
+        value={note.title}
+        className={`note-item ${note.isCurrent ? "current-note" : ""}`}
+        name="title"
+      />
+      <button onClick={deleteNote}>
+        <XIcon key={i} className="delete-item" />
+      </button>
+    </div>
   ));
 
   const currentNote = function () {
