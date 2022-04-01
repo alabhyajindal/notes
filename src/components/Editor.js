@@ -1,5 +1,4 @@
 import React from "react";
-import ContentEditable from "react-contenteditable";
 
 function Editor(props) {
   const body = document.querySelector(".editor-body");

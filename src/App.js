@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
-import { CurrencyEuroIcon, XIcon } from "@heroicons/react/solid";
-import { TrashIcon } from "@heroicons/react/solid";
-import { DocumentRemoveIcon } from "@heroicons/react/solid";
+import { XIcon } from "@heroicons/react/solid";
 
 function App() {
   const [notes, setNotes] = useState(
