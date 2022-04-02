@@ -15,6 +15,7 @@ function Editor(props) {
               onClick={props.hideMobileMenu}
               value={props.currentNote().title}
               name="title"
+              placeholder="Note's Title"
             />
             <button className="mobile-menu-cont" onClick={props.showMobileMenu}>
               <MenuIcon className="mobile-menu" />
@@ -29,6 +30,7 @@ function Editor(props) {
               value={props.currentNote().body}
               className="editor-body"
               name="body"
+              // placeholder="What's on your mind"
             ></textarea>
           </div>
         </>
