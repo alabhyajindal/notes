@@ -78,6 +78,7 @@ textarea {
   height: 3rem;
   cursor: pointer;
   color: #fff;
+  display: block;
 }
 
 .note-list {
@@ -104,6 +105,7 @@ textarea {
   height: 2rem;
   cursor: pointer;
   color: #fff;
+  display: block;
 }
 
 .current-note {

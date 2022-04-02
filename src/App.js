@@ -71,9 +71,9 @@ function App() {
           : { ...note }
       )
     );
-    const computed = window.getComputedStyle(e.target);
-    console.log(computed.height);
-    console.log(e.target.scrollHeight);
+    // const computed = window.getComputedStyle(e.target);
+    // console.log(computed.height);
+    // console.log(e.target.scrollHeight);
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
