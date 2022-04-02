@@ -116,7 +116,7 @@ textarea {
 
 .editor-cont {
   position: relative;
-  margin-left: 32rem;
+  margin-left: 25%;
 }
 
 .editor-title {
@@ -125,8 +125,8 @@ textarea {
 }
 
 .editor-body {
-  /* background-color: #fff;
-  color: #000; */
+  background-color: #fff;
+  color: #000;
 
   width: 65vw;
   height: 80vh;
@@ -140,4 +140,18 @@ textarea {
   line-height: 1.5;
 
   overflow-y: hidden;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+  .editor-cont {
+    margin-left: 0;
+  }
+  .editor-body {
+    width: 90vw;
+    margin-right: 0;
+  }
 }
