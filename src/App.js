@@ -116,6 +116,16 @@ function App() {
     document.execCommand("insertHTML", false, text);
   };
 
+  const showMobileMenu = function () {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("sidebar-off");
+  };
+
+  const hideMobileMenu = function () {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.add("sidebar-off");
+  };
+
   return (
     <div className="app">
       <Sidebar createNewNote={createNewNote} noteElems={noteElems} />
@@ -124,6 +134,8 @@ function App() {
         updateBody={updateBody}
         currentNote={currentNote}
         pastePlain={pastePlain}
+        showMobileMenu={showMobileMenu}
+        hideMobileMenu={hideMobileMenu}
       />
     </div>
   );

@@ -112,11 +112,29 @@ textarea {
   background: #000;
 }
 
+.mobile-menu-cont {
+  margin-right: 4rem;
+  /* padding: 1rem; */
+}
+
+.mobile-menu {
+  height: 3rem;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+}
+
 /* EDITOR */
 
 .editor-cont {
   position: relative;
   margin-left: 25%;
+}
+
+.editor-title-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .editor-title {
@@ -144,8 +162,14 @@ textarea {
 
 /* Media Queries */
 @media (max-width: 700px) {
-  .sidebar {
+  .sidebar-off {
     display: none;
+  }
+
+  .sidebar {
+    right: 0;
+    z-index: 1;
+    width: 40%;
   }
   .editor-cont {
     margin-left: 0;

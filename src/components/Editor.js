@@ -1,23 +1,30 @@
 import React from "react";
+import { MenuIcon } from "@heroicons/react/solid";
 
 function Editor(props) {
   const body = document.querySelector(".editor-body");
-  // console.log(body.value);
 
   return (
     <div className="editor-cont">
       {props.currentNote() && (
         <>
-          <input
-            className="editor-title"
-            onChange={props.updateNote}
-            value={props.currentNote().title}
-            name="title"
-          />
+          <div className="editor-title-cont">
+            <input
+              className="editor-title"
+              onChange={props.updateNote}
+              onClick={props.hideMobileMenu}
+              value={props.currentNote().title}
+              name="title"
+            />
+            <button className="mobile-menu-cont" onClick={props.showMobileMenu}>
+              <MenuIcon className="mobile-menu" />
+            </button>
+          </div>
           <div className="editor-body-cont">
             <textarea
               html={props.currentNote().body}
               onChange={props.updateBody}
+              onClick={props.hideMobileMenu}
               onPaste={props.pastePlain}
               value={props.currentNote().body}
               className="editor-body"
