@@ -119,11 +119,15 @@ function App() {
   const showMobileMenu = function () {
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("sidebar-off");
+    const body = document.querySelector(".editor-cont");
+    body.classList.toggle("blur-body");
   };
 
   const hideMobileMenu = function () {
     const sidebar = document.querySelector(".sidebar");
     sidebar.classList.add("sidebar-off");
+    const body = document.querySelector(".editor-cont");
+    body.classList.remove("blur-body");
   };
 
   return (
