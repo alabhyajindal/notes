@@ -3,6 +3,7 @@ import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
 import { XIcon } from "@heroicons/react/solid";
+import { PlusIcon } from "@heroicons/react/solid";
 import { nanoid } from "nanoid";
 
 function App() {
@@ -136,15 +137,26 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar createNewNote={createNewNote} noteElems={noteElems} />
-      <Editor
-        updateNote={updateNote}
-        updateBody={updateBody}
-        currentNote={currentNote}
-        pastePlain={pastePlain}
-        showMobileMenu={showMobileMenu}
-        hideMobileMenu={hideMobileMenu}
-      />
+      {notes.length > 0 ? (
+        <div>
+          <Sidebar createNewNote={createNewNote} noteElems={noteElems} />
+          <Editor
+            updateNote={updateNote}
+            updateBody={updateBody}
+            currentNote={currentNote}
+            pastePlain={pastePlain}
+            showMobileMenu={showMobileMenu}
+            hideMobileMenu={hideMobileMenu}
+          />
+        </div>
+      ) : (
+        <div className="first-note-screen">
+          <h1>You have no Notes, create one now.</h1>
+          <button onClick={createNewNote}>
+            <PlusIcon className="first-note-btn" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { PlusIcon, MenuIcon } from "@heroicons/react/solid";
+import { PlusIcon } from "@heroicons/react/solid";
 
 function Sidebar(props) {
   return (

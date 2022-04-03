@@ -194,3 +194,24 @@ textarea {
     margin-right: 0;
   }
 }
+
+/* First Note */
+
+.first-note-screen {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.first-note-btn {
+  color: #fff;
+  height: 6rem;
+  display: block;
+  cursor: pointer;
+}
