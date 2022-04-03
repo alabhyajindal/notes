@@ -2,7 +2,9 @@ import React from "react";
 import { MenuIcon } from "@heroicons/react/solid";
 
 function Editor(props) {
-  const body = document.querySelector(".editor-body");
+  // Rendering the Sidebar and Editor if the notes array has more than 0
+  // notes. If not then a screen with the option to create a new note is
+  // rendered
 
   return (
     <div className="editor-cont">
