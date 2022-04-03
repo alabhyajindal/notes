@@ -3,13 +3,15 @@ import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
 import { XIcon } from "@heroicons/react/solid";
+import { nanoid } from "nanoid";
 
 function App() {
   const [notes, setNotes] = useState(
     JSON.parse(localStorage.getItem("notesData")) || [
       {
         title: `Note 1`,
-        id: `1`,
+        // id: `1`,
+        id: nanoid(),
         body: "",
         isCurrent: true,
       },
@@ -35,7 +37,8 @@ function App() {
       ...prevState,
       {
         title: `Note ${notes.length + 1}`,
-        id: `${notes.length + 1}`,
+        // id: `${notes.length + 1}`,
+        id: nanoid(),
         body: "",
         isCurrent: true,
       },
@@ -45,8 +48,9 @@ function App() {
   };
 
   const selectNote = function (e) {
+    console.log(e.target.id);
     const updatedNotes = notes.map((note) =>
-      note.title === e.target.value
+      note.id === e.target.id
         ? { ...note, isCurrent: true }
         : { ...note, isCurrent: false }
     );
