@@ -5,6 +5,7 @@ import {
   CollectionIcon,
   GiftIcon,
 } from "@heroicons/react/solid";
+// import Hearts from "./assets/Hearts";
 
 function Sidebar(props) {
   return (

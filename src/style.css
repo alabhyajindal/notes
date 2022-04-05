@@ -3,14 +3,14 @@
   --sidebar-heading: #fafafa;
   --sidebar-text: #fafafa;
   --body-text: #fafafa;
-  --body-bg: #222;
-  --sidebar-bg: #333;
-  --sidebar-current: #555;
+  --body-bg: #15202b;
+  --sidebar-bg: #1e2732;
+  --sidebar-current: #273340;
 
-  --add-button: greenyellow;
-  --favorite-button-filled: greenyellow;
-  --first-add-button: greenyellow;
-  --section-heading-icons: greenyellow;
+  --add-button: #00ba7c;
+  --favorite-button-filled: #00ba7c;
+  --first-add-button: #00ba7c;
+  --section-heading-icons: #00ba7c;
 
   --favorite-button: #fafafa;
   --delete-button: #fafafa;
