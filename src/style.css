@@ -1,6 +1,6 @@
 /* GENERAL  */
 :root {
-  --sidebar-heading: #fff;
+  --sidebar-heading: #fafafa;
   --sidebar-bg: #333;
   --sidebar-text: #fafafa;
   --sidebar-current: #555;
@@ -8,8 +8,8 @@
   --body-text: #fafafa;
 
   --add-btn: greenyellow;
-  --delete-button: white;
-  --menu-button: white;
+  --delete-button: #fafafa;
+  --menu-button: #fafafa;
   --first-add-button: greenyellow;
 }
 
@@ -95,6 +95,15 @@ textarea {
   cursor: pointer;
   color: var(--add-btn);
   display: block;
+  transition: all 0.2s ease-out;
+}
+
+.add-note:hover {
+  transform: scale(1.2);
+}
+
+.add-note:active {
+  transform: scale(0.8);
 }
 
 .note-list {
@@ -122,6 +131,15 @@ textarea {
   cursor: pointer;
   color: var(--delete-button);
   display: block;
+  transition: all 0.2s ease-out;
+}
+
+.delete-item:hover {
+  transform: scale(1.2);
+}
+
+.delete-item:active {
+  transform: scale(0.8);
 }
 
 .current-note {
@@ -230,4 +248,13 @@ textarea {
   height: 6rem;
   display: block;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.first-note-btn:hover {
+  transform: scale(1.2);
+}
+
+.first-note-btn:active {
+  transform: scale(0.8);
 }
