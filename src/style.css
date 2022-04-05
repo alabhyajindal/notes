@@ -1,18 +1,20 @@
 /* GENERAL  */
 :root {
   --sidebar-heading: #fafafa;
-  --sidebar-bg: #333;
   --sidebar-text: #fafafa;
-  --sidebar-current: #555;
-  --body-bg: #222;
   --body-text: #fafafa;
+  --body-bg: #222;
+  --sidebar-bg: #333;
+  --sidebar-current: #555;
 
   --add-button: greenyellow;
-  --favorite-button: #fafafa;
   --favorite-button-filled: greenyellow;
+  --first-add-button: greenyellow;
+  --section-heading-icons: greenyellow;
+
+  --favorite-button: #fafafa;
   --delete-button: #fafafa;
   --menu-button: #fafafa;
-  --first-add-button: greenyellow;
 }
 
 * {
@@ -86,10 +88,41 @@ textarea {
 
 .header {
   margin: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
   display: flex;
   /* width: 70%; */
   justify-content: space-between;
   align-items: center;
+}
+
+.section-heading-cont {
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 95%;
+  margin: 1rem 0rem;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  cursor: pointer;
+  /* margin-bottom: 1rem; */
+}
+
+.favorites {
+  font-size: 2rem;
+}
+
+.section-heading-icon {
+  height: 2.5rem;
+  color: var(--section-heading-icons);
+}
+
+.all-notes {
+  font-size: 2rem;
 }
 
 .add-note {

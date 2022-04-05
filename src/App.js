@@ -32,10 +32,11 @@ function App() {
     setNotes((prevState) => [
       ...prevState,
       {
-        title: `Note ${notes.length + 1}`,
         id: nanoid(),
+        title: `Note ${notes.length + 1}`,
         body: "",
         isCurrent: true,
+        isFavorite: false,
       },
     ]);
 
@@ -52,7 +53,7 @@ function App() {
     setNotes([...updatedNotes]);
   };
 
-  // Update the title of the note, passed to both Sidebar and Editor
+  // Update the title of the note, passed to Editor
   const updateNote = function (e) {
     setNotes((prevState) =>
       prevState.map((note) =>
@@ -113,9 +114,20 @@ function App() {
   };
 
   const favoriteNote = function (e) {
-    const selectedHeartCont = e.target.closest("div").children[0];
-    const selectedHeart = selectedHeartCont.children[0];
-    selectedHeart.classList.toggle("favorite-item-filled");
+    // Method to change the color of the heart imperatively
+    // const selectedHeartCont = e.target.closest("div").children[0];
+    // const selectedHeart = selectedHeartCont.children[0];
+    // selectedHeart.classList.toggle("favorite-item-filled");
+
+    // Selecting the id of the input tag beacuse e.target will return the SVG of the HeartIcon
+    const selectedNote = e.target.closest("div").children[1].id;
+    // A method of updating state copied from the selectNote function above
+    const updatedNotes = notes.map((note) =>
+      note.id == selectedNote
+        ? { ...note, isFavorite: !note.isFavorite }
+        : { ...note }
+    );
+    setNotes([...updatedNotes]);
   };
 
   // Mapping over the notes array and returning a JSX object - a single input tag
@@ -125,7 +137,11 @@ function App() {
       key={i + 1}
     >
       <button onClick={favoriteNote}>
-        <HeartIcon className="favorite-item" />
+        <HeartIcon
+          className={`favorite-item ${
+            note.isFavorite ? "favorite-item-filled" : ""
+          }`}
+        />
       </button>
       <input
         key={note.id}
@@ -138,7 +154,7 @@ function App() {
         name="title"
       />
       <button onClick={deleteNote}>
-        <XIcon key={i} className="delete-item" />
+        <XIcon className="delete-item" />
       </button>
     </div>
   ));
