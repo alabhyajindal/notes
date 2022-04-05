@@ -7,7 +7,9 @@
   --body-bg: #222;
   --body-text: #fafafa;
 
-  --add-btn: greenyellow;
+  --add-button: greenyellow;
+  --favorite-button: #fafafa;
+  --favorite-button-filled: greenyellow;
   --delete-button: #fafafa;
   --menu-button: #fafafa;
   --first-add-button: greenyellow;
@@ -93,7 +95,7 @@ textarea {
 .add-note {
   height: 3rem;
   cursor: pointer;
-  color: var(--add-btn);
+  color: var(--add-button);
   display: block;
   transition: all 0.2s ease-out;
 }
@@ -124,6 +126,20 @@ textarea {
   padding: 1rem 1rem;
   font-size: 1.7rem;
   cursor: pointer;
+}
+
+.favorite-item {
+  height: 2rem;
+  cursor: pointer;
+  color: transparent;
+  stroke: var(--favorite-button);
+  stroke-width: 1.5px;
+  display: block;
+}
+
+.favorite-item-filled {
+  stroke: var(--favorite-button-filled);
+  color: var(--favorite-button-filled);
 }
 
 .delete-item {

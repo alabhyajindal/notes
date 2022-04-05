@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
 import "./style.css";
-import { XIcon } from "@heroicons/react/solid";
-import { PlusIcon } from "@heroicons/react/solid";
+import { XIcon, PlusIcon, HeartIcon } from "@heroicons/react/solid";
 import { nanoid } from "nanoid";
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
 
   // Select a note
   const selectNote = function (e) {
-    console.log(e.target.id);
     const updatedNotes = notes.map((note) =>
       note.id === e.target.id
         ? { ...note, isCurrent: true }
@@ -74,15 +72,12 @@ function App() {
           : { ...note }
       )
     );
-    // const computed = window.getComputedStyle(e.target);
-    // console.log(computed.height);
-    // console.log(e.target.scrollHeight);
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
   // Delete a note when the XIcon is clicked
   const deleteNote = function (e) {
-    const selectedNote = e.target.closest("div").children[0].id;
+    const selectedNote = e.target.closest("div").children[1].id;
     const updatedNotes = notes.filter((note) => note.id !== selectedNote);
 
     setNotes([...updatedNotes]);
@@ -117,12 +112,21 @@ function App() {
     body.classList.remove("blur-body");
   };
 
+  const favoriteNote = function (e) {
+    const selectedHeartCont = e.target.closest("div").children[0];
+    const selectedHeart = selectedHeartCont.children[0];
+    selectedHeart.classList.toggle("favorite-item-filled");
+  };
+
   // Mapping over the notes array and returning a JSX object - a single input tag
   const noteElems = notes.map((note, i) => (
     <div
       className={`note-item-cont ${note.isCurrent ? "current-note" : ""}`}
       key={i + 1}
     >
+      <button onClick={favoriteNote}>
+        <HeartIcon className="favorite-item" />
+      </button>
       <input
         key={note.id}
         id={note.id}
