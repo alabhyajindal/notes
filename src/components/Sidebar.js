@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Outlet } from "react-router-dom";
 import {
   PlusIcon,
   SparklesIcon,
@@ -23,9 +24,12 @@ function Sidebar(props) {
         </div>
         <div className="section-heading">
           <GiftIcon className="section-heading-icon" />
-          <h2 className="favorites">Favorites</h2>
+          <Link to="/favorites" className="favorites">
+            Favorites
+          </Link>
         </div>
       </div>
+      {/* <Outlet /> */}
       <div className="note-list">{props.noteElems}</div>
     </div>
   );

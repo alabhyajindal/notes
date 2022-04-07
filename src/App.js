@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Editor from "./components/Editor";
 import Sidebar from "./components/Sidebar";
+import { Link, Outlet } from "react-router-dom";
 import "./style.css";
 import { XIcon, PlusIcon, HeartIcon } from "@heroicons/react/solid";
 import { nanoid } from "nanoid";
@@ -114,11 +115,6 @@ function App() {
   };
 
   const favoriteNote = function (e) {
-    // Method to change the color of the heart imperatively
-    // const selectedHeartCont = e.target.closest("div").children[0];
-    // const selectedHeart = selectedHeartCont.children[0];
-    // selectedHeart.classList.toggle("favorite-item-filled");
-
     // Selecting the id of the input tag beacuse e.target will return the SVG of the HeartIcon
     const selectedNote = e.target.closest("div").children[1].id;
     // A method of updating state copied from the selectNote function above
