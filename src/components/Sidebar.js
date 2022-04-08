@@ -12,25 +12,19 @@ function Sidebar(props) {
   return (
     <div className="sidebar">
       <header className="header">
-        <h1 className="heading">Diffuse</h1>
+        <Link to="/" className="heading">
+          Diffuse
+        </Link>
         <button onClick={props.createNewNote}>
           <PlusIcon className="add-note" />
         </button>
       </header>
       <div className="section-heading-cont">
-        {/* <div className="section-heading">
-          <CollectionIcon className="section-heading-icon" />
-          <h2 className="all-notes">All Notes</h2>
-        </div> */}
-        {/* <div className="section-heading">
-            <GiftIcon className="section-heading-icon" />
-            <Link to="/favorites" className="favorites">
-              Favorites
-            </Link>
-          </div> */}
         <div className="section-heading">
           <GiftIcon className="section-heading-icon" />
-          <h2 className="favorites">Favorites</h2>
+          <Link to="/favorites" className="favorites">
+            Favorites
+          </Link>
         </div>
       </div>
       {/* <Outlet /> */}
