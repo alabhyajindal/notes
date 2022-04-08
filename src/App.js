@@ -9,7 +9,7 @@ import { nanoid } from "nanoid";
 function App() {
   // Initialized State to track all notes' details. The initial value is taken from the localState if it exists, if not then the state is initialized as an empty array
   const [notes, setNotes] = useState(
-    JSON.parse(localStorage.getItem("notesData")) || []
+    () => JSON.parse(localStorage.getItem("notesData")) || []
   );
 
   // Storing the notes' data on localStorage. Dependencies array includes the notes State. This means the data gets updated to localStorage whenever there is a change in the notes data
